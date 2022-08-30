@@ -12,7 +12,7 @@ const cards = (games) => {
              </div>
              <button>Comments</button>
             </div>`
-        cards.innerHTML=innerHtml;
+        cards.innerHTML += innerHtml;
     });
     
 }
