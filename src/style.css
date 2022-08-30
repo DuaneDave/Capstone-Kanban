@@ -15,7 +15,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
+  color: var(--light-text);
 }
 
 ul {
@@ -52,6 +52,7 @@ nav {
   padding: 0.5em;
   justify-content: center;
   gap: 3.5rem;
+  z-index: 10;
 }
 
 .nav-link {
@@ -130,12 +131,16 @@ nav {
 .cards {
   width: 100%;
   padding: 0 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
 }
 
 .card {
   width: 100%;
   max-width: 300px;
-  padding:  0 0.5em;
+  padding: 0 0.5em;
   background: var(--dark-bg);
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
@@ -174,5 +179,57 @@ nav {
   .cards {
     width: calc(100% - 6rem);
     margin-left: 6rem;
+  }
+}
+
+footer {
+  background-color: var(--dark-bg);
+  justify-content: space-around;
+  padding: 2.5em 1em 2em;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-details {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-details p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.app {
+  margin-right: 1rem;
+}
+
+.footer-link {
+  color: rgb(216, 210, 210);
+  align-items: flex-end;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.bxl-play-store,
+.bxl-apple {
+  font-size: 2rem;
+  color: white;
+}
+
+.social-links i {
+  font-size: 1.3rem;
+  color: rgb(7, 2, 13);
+  background-color: rgb(233, 227, 227);
+  border-radius: 50%;
+  padding: 0.2em;
+  margin: 0.6rem 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    width: calc(100% - 6rem);
+    margin-left: 6rem;
+    flex-direction: row;
   }
 }
