@@ -36,6 +36,7 @@ button {
   background-color: var(--blend-color);
   color: rgb(18, 4, 29);
   padding: 0.8em 1.5em;
+  border: none;
   font-family: inherit;
 }
 
@@ -147,6 +148,7 @@ nav {
   padding: 0.5em 0.5em;
   background: var(--dark-bg);
   margin: 1rem;
+  border-radius: 8px;
 }
 
 .card button {
@@ -230,14 +232,6 @@ footer {
   margin: 0.6rem 0.5rem;
 }
 
-@media screen and (min-width: 768px) {
-  footer {
-    width: calc(100% - 6rem);
-    margin-left: 6rem;
-    flex-direction: row;
-  }
-}
-
 .modal {
   width: 100%;
   height: 100vh;
@@ -246,8 +240,8 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(58, 47, 66, 0.11);
-  padding: 1em;
+  background-color: rgba(58, 47, 66, 0.253);
+  padding: 1em 0;
   transition: all 0.5s ease-in-out;
 }
 
@@ -257,8 +251,7 @@ footer {
 
 .modal-content {
   background-color: var(--dark-bg);
-  padding: 1em 0.5em;
-  min-height: 70vh;
+  max-width: 100%;
   max-height: 600px;
   overflow-y: auto;
   transform: scale(0);
@@ -273,23 +266,31 @@ footer {
 
 .modal-img {
   width: 100%;
-  max-width: 320px;
+  max-width: 300px;
   background-color: white;
   height: 200px;
-  margin: 0 auto;
+  margin-top: 1rem;
 }
 
-.movie-desc {
-  font-size: 0.77rem;
-  width: 45ch;
+.modal-details {
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-details p {
+  font-size: 0.75rem;
+  width: auto;
+  max-width: 430px;
+  line-height: 1.7;
+  text-align: center;
   margin: 0 auto;
 }
 
 .bx-x {
   position: absolute;
-  top: 2%;
+  top: 1%;
   right: 3%;
-  color: white;
+  color: var(--blend-color);
   font-size: 1.5rem;
   cursor: pointer;
 }
@@ -335,4 +336,18 @@ textarea {
 
 textarea {
   height: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    width: calc(100% - 6rem);
+    margin-left: 6rem;
+    flex-direction: row;
+  }
+
+  .modal-img {
+    max-width: 400px;
+    background-color: white;
+    height: 300px;
+  }
 }
