@@ -1,19 +1,25 @@
-import cards from "./cards";
-class Game {
-getData = async()=>{
-    const response = await fetch('https://api.tvmaze.com/shows');
-    const getJsonObj = await response.json();
-    const likedList = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/g47Ybpe3Iv9MLdD87d0m/likes').then((response) => response.json());
-    const result = getJsonObj.slice(0, 18);
-    const likedResult = likedList.slice(0,18);
-    cards(result, likedResult);
-}
-
-getLikes= async()=>{
-    const likedList = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/g47Ybpe3Iv9MLdD87d0m/likes').then((response) => response.json());
-    const likedResult = likedList.slice(0,18);
-    return likedResult;
-}
-}
-
-export default Game;
+import cards from './cards.js';
+const getData = async () => {
+  const response = await fetch('https://api.tvmaze.com/shows');
+  const getJsonObj = await response.json();
+  const result = getJsonObj.slice(0, 18);
+  const likes = await fetch(
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/likes',
+  );
+  const res = await likes.json();
+  cards(result, res);
+};
+const requestLikes = async (url, id) => {
+  await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      item_id: id,
+    }),
+  });
+  getData();
+};
+requestLikes();
+export { getData, requestLikes };

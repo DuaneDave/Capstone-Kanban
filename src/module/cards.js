@@ -1,35 +1,27 @@
-import modal from './modal.js';
+/* eslint-disable import/no-cycle */
 
-const cards = (games,likedResult) => {
+import modal from './modal.js';
+import { requestLikes } from './getData.js';
+const cards = (games, data) => {
   const cards = document.querySelector('.cards');
+  cards.innerHTML = '';
   games.forEach((game, index) => {
-    const indexlike = likedResult.findIndex((like) => like.item_id === game.id);
-    const msgLikes = index >= 0 ? likedResult[index].likes : 0;
+    const id = data.findIndex((like) => +like.item_id === index);
+    const msgLikes = id >= 0 ? data[id].likes : 0;
     const innerHtml = `
     <div class="card" id="card">
-      <img src="${game.image.original}" class="card-img"/>
+      <img src="${game.image.original}" class="card-img" />
       <div class="social flex">
         <span class="details">${game.name}</span>
         <div class="like flex">
-        <i class="bx bx-heart" data-pos=${game.id}></i>
-        <span class="game-id">${msgLikes}</span>
+          <i class="bx bx-heart" data-id="${index}"></i>
+          <span>${msgLikes}</span>
         </div>
       </div>
-      <button id="pop-up" data-id="${index}" data-pos=${game.id}>Comments</button>
+      <button id="pop-up" data-id="${index}">Comments</button>
     </div>`;
     cards.innerHTML += innerHtml;
   });
-
-  const likeButtons = document.querySelectorAll('.bx-heart');
-    likeButtons.forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        const gameId = e.target.dataset.pos;
-        console.log(gameId);
-        addLike(gameId, btn);
-        btn.disabled = true;
-      }, { once: true });
-    });
-
   const popUp = document.querySelectorAll('#pop-up');
   popUp.forEach((pop) => {
     pop.addEventListener('click', (e) => {
@@ -38,7 +30,6 @@ const cards = (games,likedResult) => {
       modalPanel.classList.remove('hidden');
       modalContent.classList.add('active');
       modal(games, e.target.dataset.id);
-    
       const closeBtn = document.querySelector('.bx-x');
       closeBtn.addEventListener('click', () => {
         modalPanel.classList.add('hidden');
@@ -46,22 +37,12 @@ const cards = (games,likedResult) => {
       });
     });
   });
-
-
-  const addLike = async (itemId, likeButton) => {
-    await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/g47Ybpe3Iv9MLdD87d0m/likes', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ item_id: itemId }),
-    }).then((response) => response.text(response)).then((json) => json);
-    const likedList = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/g47Ybpe3Iv9MLdD87d0m/likes').then((response) => response.json());
-    const index = likedList.findIndex((like) => like.item_id === itemId);
-    const msgLikes = index >= 0 ? likedList[index].likes : 0;
-    likeButton.nextElementSibling.innerHTML = msgLikes;
-  }
-
+  const likeBtn = document.querySelectorAll('.bx-heart');
+  const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/likes';
+  likeBtn.forEach((like) => {
+    like.addEventListener('click', (e) => {
+      requestLikes(url, e.target.dataset.id);
+    });
+  });
 };
-
 export default cards;
