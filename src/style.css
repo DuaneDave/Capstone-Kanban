@@ -27,11 +27,16 @@ a {
   color: var(--text-color);
 }
 
+main {
+  justify-content: center;
+}
+
 button {
   cursor: pointer;
   background-color: var(--blend-color);
   color: rgb(18, 4, 29);
   padding: 0.8em 1.5em;
+  font-family: inherit;
 }
 
 .flex {
@@ -129,19 +134,19 @@ nav {
 
 .cards {
   width: 100%;
+  max-width: 1200px;
   padding: 0 1em;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  flex-wrap: wrap;
   margin-top: 3rem;
 }
 
 .card {
   width: 100%;
   max-width: 300px;
-  padding: 0 0.5em;
+  padding: 0.5em 0.5em;
   background: var(--dark-bg);
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+  margin: 1rem;
 }
 
 .card button {
@@ -231,4 +236,103 @@ footer {
     margin-left: 6rem;
     flex-direction: row;
   }
+}
+
+.modal {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(58, 47, 66, 0.11);
+  padding: 1em;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: var(--dark-bg);
+  padding: 1em 0.5em;
+  min-height: 70vh;
+  max-height: 600px;
+  overflow-y: auto;
+  transform: scale(0);
+  transition: transform 1s ease-in-out;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.modal-content.active {
+  transform: scale(1);
+}
+
+.modal-img {
+  width: 100%;
+  max-width: 320px;
+  background-color: white;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.movie-desc {
+  font-size: 0.77rem;
+  width: 45ch;
+  margin: 0 auto;
+}
+
+.bx-x {
+  position: absolute;
+  top: 2%;
+  right: 3%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin: 0.7rem 0;
+}
+
+.comment {
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: rgb(194, 186, 186);
+  margin-bottom: 0.7rem;
+}
+
+.comment-msg {
+  width: 60%;
+}
+
+form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid rgb(230, 228, 228);
+  border-radius: 8px;
+  padding: 0.5em 0.7em;
+  color: white;
+  font-family: inherit;
+  margin-bottom: 0.4rem;
+}
+
+textarea {
+  height: 100px;
 }
