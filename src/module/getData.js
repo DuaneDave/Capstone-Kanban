@@ -1,13 +1,14 @@
 /* eslint-disable import/no-cycle */
 import cards from './cards.js';
+import counter from './counter.js';
 
 const getData = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const getJsonObj = await response.json();
   const result = getJsonObj.slice(0, 18);
-  const likes = await fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/likes',
-  );
+  counter(result.length);
+
+  const likes = await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/likes');
   const res = await likes.json();
   cards(result, res);
 };

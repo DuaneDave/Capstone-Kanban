@@ -20,7 +20,7 @@ const modal = async (data, index) => {
       <div class="comment-details">
         <h2 class="heading">Comments <span>(${commentData.length})</span></h2>`;
   commentData.map((comment) => modalContainer.innerHTML += `<div class="comment flex">
-          <p class="comment-date">${comment.creation_date}</p>
+          <p class="comment-date">${comment.creation_date} ${comment.username} :</p>
           <p class="comment-msg">${comment.comment}</p>
           </div>
           `);
@@ -28,12 +28,14 @@ const modal = async (data, index) => {
     </div>
     <div class="comment-form">
       <form class="">
+      <h2 class="heading">Add a comment</h2>
         <input type="text" placeholder="Enter your name" />
         <textarea placeholder="Enter your comment here"></textarea>
         <button type="submit" class="btn flex">Submit</button>
       </form>
       <i class='bx bx-x'></i>
     </div>`;
+
   const form = document.querySelector('form');
   form.addEventListener('submit', (e) => {
     e.preventDefault();

@@ -16,7 +16,7 @@ const cards = (games, data) => {
         <span class="details">${game.name}</span>
         <div class="like flex">
           <i class="bx bx-heart" data-id="${index}"></i>
-          <span>${msgLikes}</span>
+          <span>${msgLikes} Likes</span>
         </div>
       </div>
       <button id="pop-up" data-id="${index}">Comments</button>
