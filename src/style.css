@@ -1,4 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+  --text-color: #000;
+  --light-text: rgb(233, 225, 225);
+  --dark-bg: rgb(7, 2, 13);
+  --blend-color: rgb(235, 148, 134);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-  background-color: gold;
-  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: var(--light-text);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--blend-color);
+  color: rgb(18, 4, 29);
+  padding: 0.8em 1.5em;
+}
+
+.flex {
+  display: flex;
+}
+
+nav {
+  width: 100%;
+}
+
+.nav-menu {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  background-color: #000;
+  padding: 0.5em;
+  justify-content: center;
+  gap: 3.5rem;
+  z-index: 10;
+}
+
+.nav-link {
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.788rem;
+  letter-spacing: 2px;
+  color: var(--light-text);
+}
+
+.nav-link i {
+  font-size: 1.5rem;
+  color: var(--blend-color);
+}
+
+.nav-item {
+  transition: all 0.4s ease-in-out;
+}
+
+.nav-item:hover {
+  transform: scale(1.08);
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--dark-bg);
+  }
+
+  a.logo {
+    color: var(--light-text);
+    position: absolute;
+    top: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .ban {
+    color: rgb(235, 148, 134);
+  }
+
+  .nav-menu {
+    position: relative;
+    left: 2.5rem;
+    flex-direction: column;
+    align-items: center;
+    width: initial;
+    background: none;
+  }
+
+  .nav-link i {
+    font-size: 2rem;
+  }
+}
+
+.headline {
+  width: 100%;
+  height: 78vh;
+}
+
+.headline-img {
+  background: url('./asset/bg2.jpg');
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.cards {
+  width: 100%;
+  padding: 0 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  padding: 0 0.5em;
+  background: var(--dark-bg);
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.card button {
+  width: 100%;
+}
+
+.card-img {
+  width: 100%;
+  height: 270px;
+  background: white;
+}
+
+.like {
+  color: rgb(224, 221, 221);
+  align-items: flex-end;
+}
+
+.like .bx-heart {
+  font-size: 2rem;
+  margin-right: 0.2rem;
+  color: rgb(255, 28, 28);
+}
+
+.social {
+  justify-content: space-between;
+  padding: 0.6em 1em;
+}
+
+.social .details {
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .cards {
+    width: calc(100% - 6rem);
+    margin-left: 6rem;
+  }
+}
+
+footer {
+  background-color: var(--dark-bg);
+  justify-content: space-around;
+  padding: 2.5em 1em 2em;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-details {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-details p {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.app {
+  margin-right: 1rem;
+}
+
+.footer-link {
+  color: rgb(216, 210, 210);
+  align-items: flex-end;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.bxl-play-store,
+.bxl-apple {
+  font-size: 2rem;
+  color: white;
+}
+
+.social-links i {
+  font-size: 1.3rem;
+  color: rgb(7, 2, 13);
+  background-color: rgb(233, 227, 227);
+  border-radius: 50%;
+  padding: 0.2em;
+  margin: 0.6rem 0.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  footer {
+    width: calc(100% - 6rem);
+    margin-left: 6rem;
+    flex-direction: row;
+  }
 }
