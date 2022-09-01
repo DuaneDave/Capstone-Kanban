@@ -4,7 +4,7 @@
 This  app is built with HTML | CSS | JAVASCRIPT | WEBPACK and JEST it uses multiple API to render popular movies and enable users to have social interactivity such as like and comments
 
 ![screenshot](./src/asset/img1.png)
-![screenshot](./src/asset/img2.png)
+![screenshot](./src/asset/im2.png)
 
 ## Built With
 
