@@ -2,6 +2,7 @@
 
 import modal from './modal.js';
 import { requestLikes } from './getData.js';
+
 const cards = (games, data) => {
   const cards = document.querySelector('.cards');
   cards.innerHTML = '';
@@ -24,12 +25,12 @@ const cards = (games, data) => {
   });
   const popUp = document.querySelectorAll('#pop-up');
   popUp.forEach((pop) => {
-    pop.addEventListener('click', (e) => {
+    pop.addEventListener('click', async (e) => {
       const modalPanel = document.querySelector('.modal');
       const modalContent = document.querySelector('.modal-content');
       modalPanel.classList.remove('hidden');
       modalContent.classList.add('active');
-      modal(games, e.target.dataset.id);
+      await modal(games, e.target.dataset.id);
       const closeBtn = document.querySelector('.bx-x');
       closeBtn.addEventListener('click', () => {
         modalPanel.classList.add('hidden');

@@ -1,102 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game App</title>
-    <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav class="flex">
-      <a href="#" class="logo">Kan<span class="ban">Ban</span></a>
 
-      <ul class="nav-menu flex">
-        <li class="nav-item">
-          <a href="#" class="nav-link flex"
-            ><i class="bx bx-home-alt"></i> Home</a
-          >
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game App</title>
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="flex">
+    <a href="#" class="logo">Kan<span class="ban">Ban</span></a>
+
+    <ul class="nav-menu flex">
+      <li class="nav-item">
+        <a href="#" class="nav-link flex"><i class="bx bx-home-alt"></i> Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link flex"><i class="bx bx-joystick"></i> Games<span id="game-count"></span></a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link flex"><i class="bx bx-info-circle"></i> About</a>
+      </li>
+    </ul>
+  </nav>
+  <section class="headline">
+    <div class="headline-img"></div>
+  </section>
+  <main class="flex">
+    <div class="cards flex"></div>
+  </main>
+  <section class="modal flex hidden" id="modal">
+    <div class="modal-content flex"></div>
+  </section>
+  <footer class="flex">
+    <h3 class="logo">Kan<span class="ban">Ban</span></h3>
+    <div class="footer-details flex">
+      <p>Get our app</p>
+      <ul class="flex">
+        <li class="app">
+          <a href="#" class="footer-link flex"><i class="bx bxl-apple"></i>App store</a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link flex"
-            ><i class="bx bx-joystick"></i> Games<span id="game-count"></span
-          ></a>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link flex"
-            ><i class="bx bx-info-circle"></i> About</a
-          >
+        <li class="app">
+          <a href="#" class="footer-link flex"><i class="bx bxl-play-store"></i>Google play</a>
         </li>
       </ul>
-    </nav>
-    <section class="headline">
-      <div class="headline-img"></div>
-    </section>
-    <main class="flex">
-      <div class="cards flex"></div>
-    </main>
-    <section class="modal flex hidden" id="modal">
-      <div class="modal-content flex">
-        <div class="modal-details">
-          <img class="modal-img" id="modal-img"/>
-          <h2 class="heading" id="modal-heading">Call of duty</h2>
-          <p class="movie-desc" id="movie-desc">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Reprehenderit, quisquam.
-          </p>
-        </div>
-        <div class="comments">
-          <div class="comment-details">
-            <h2 class="heading">Comments <span></span></h2>
+    </div>
+    <div class="footer-details flex">
+      <p>Contact us</p>
+      <ul class="contact">
+        <li><a href="#" class="footer-link">Duanedave19@gmail.com</a></li>
+        <li><a href="#" class="footer-link">Duanedave19@gmail.com</a></li>
+        <li class="social-links">
+          <a href="#" class="footer-link"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="footer-link"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="footer-link"><i class="bx bxl-instagram"></i></a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
 
-            <div class="comment flex">
-              <p class="comment-date" id="comment-date">Jan 2022 lie</p>
-            <p class="comment-msg" id="comment-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum, quasi.</p>
-            </div>
-
-          </div>
-        </div>
-        <div class="comment-form">
-          <form class="">
-            <input type="text" placeholder="Enter your name" />
-            <textarea name="" placeholder="Enter your comment here"></textarea>
-            <button type="submit" class="btn flex">Submit</button>
-          </form>
-          <i class='bx bx-x' id="bx"></i>
-      </div>
-    </section>
-    <footer class="flex">
-      <h3 class="logo">Kan<span class="ban">Ban</span></h3>
-      <div class="footer-details flex">
-        <p>Get our app</p>
-        <ul class="flex">
-          <li class="app">
-            <a href="#" class="footer-link flex"
-              ><i class="bx bxl-apple"></i>App store</a
-            >
-          </li>
-          <li class="app">
-            <a href="#" class="footer-link flex"
-              ><i class="bx bxl-play-store"></i>Google play</a
-            >
-          </li>
-        </ul>
-      </div>
-      <div class="footer-details flex">
-        <p>Contact us</p>
-        <ul class="contact">
-          <li><a href="#" class="footer-link">Duanedave19@gmail.com</a></li>
-          <li><a href="#" class="footer-link">Duanedave19@gmail.com</a></li>
-          <li class="social-links">
-            <a href="#" class="footer-link"><i class="bx bxl-facebook"></i></a>
-            <a href="#" class="footer-link"><i class="bx bxl-twitter"></i></a>
-            <a href="#" class="footer-link"><i class="bx bxl-instagram"></i></a>
-          </li>
-        </ul>
-      </div>
-    </footer>
-  </body>
 </html>

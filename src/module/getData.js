@@ -1,4 +1,6 @@
+/* eslint-disable import/no-cycle */
 import cards from './cards.js';
+
 const getData = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const getJsonObj = await response.json();
@@ -22,4 +24,11 @@ const requestLikes = async (url, id) => {
   getData();
 };
 requestLikes();
-export { getData, requestLikes };
+
+const getComments = async (id) => {
+  const comments = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/comments?item_id=item${id}`);
+  const response = comments.json();
+  return response;
+};
+
+export { getData, requestLikes, getComments };
