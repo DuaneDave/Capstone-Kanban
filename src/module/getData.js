@@ -1,6 +1,7 @@
 /* eslint-disable import/no-cycle */
 import cards from './cards.js';
 
+
 const getData = async () => {
   const response = await fetch('https://api.tvmaze.com/shows');
   const getJsonObj = await response.json();

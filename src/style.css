@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: var(--blend-color);
+  border-radius: 30px;
+}
+
 :root {
   --text-color: #000;
-  --light-text: rgb(233, 225, 225);
+  --light-text: rgb(255, 255, 255);
   --dark-bg: rgb(7, 2, 13);
-  --blend-color: rgb(235, 148, 134);
+  --blend-color: gold;
 }
 
 * {
@@ -29,6 +40,7 @@ a {
 
 main {
   justify-content: center;
+  background-color: rgb(3, 0, 7);
 }
 
 button {
@@ -138,7 +150,6 @@ a.logo {
   width: 100%;
   max-width: 300px;
   padding: 0.5em 0.5em;
-  background: var(--dark-bg);
   margin: 1rem;
   border-radius: 8px;
 }
@@ -232,7 +243,7 @@ footer {
   top: 0;
   left: 0;
   background-color: rgba(58, 47, 66, 0.253);
-  padding: 1em 0;
+  padding: 1em;
   transition: all 0.5s ease-in-out;
 }
 
