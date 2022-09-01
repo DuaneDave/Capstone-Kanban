@@ -34,7 +34,7 @@ To run tests on this project if you tweaked something, run the following command
 
 ### LIVE DEMO
 
-Check the live demo here [LINK](Coming Soon)
+Check the live demo here [LINK](https://duanedave.github.io/Capstone-Kanban/)
 
 ## Authors
 
@@ -54,7 +54,7 @@ Check the live demo here [LINK](Coming Soon)
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/DuaneDave/LeaderBoard/issues).
+Feel free to check the [issues page](https://github.com/DuaneDave/Capstone-Kanban/issues).
 
 ## Show your support
 
