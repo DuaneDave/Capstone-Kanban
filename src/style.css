@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: var(--blend-color);
+  border-radius: 30px;
+}
+
 :root {
   --text-color: #000;
   --light-text: rgb(255, 255, 255);
