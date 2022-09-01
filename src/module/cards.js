@@ -3,6 +3,7 @@
 import modal from './modal.js';
 import { requestLikes } from './getData.js';
 
+
 const cards = (games, data) => {
   const cards = document.querySelector('.cards');
   cards.innerHTML = '';
@@ -23,6 +24,7 @@ const cards = (games, data) => {
     </div>`;
     cards.innerHTML += innerHtml;
   });
+
   const popUp = document.querySelectorAll('#pop-up');
   popUp.forEach((pop) => {
     pop.addEventListener('click', async (e) => {
@@ -31,6 +33,7 @@ const cards = (games, data) => {
       modalPanel.classList.remove('hidden');
       modalContent.classList.add('active');
       await modal(games, e.target.dataset.id);
+
       const closeBtn = document.querySelector('.bx-x');
       closeBtn.addEventListener('click', () => {
         modalPanel.classList.add('hidden');
@@ -38,6 +41,7 @@ const cards = (games, data) => {
       });
     });
   });
+  
   const likeBtn = document.querySelectorAll('.bx-heart');
   const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/likes';
   likeBtn.forEach((like) => {
@@ -46,4 +50,5 @@ const cards = (games, data) => {
     });
   });
 };
+
 export default cards;

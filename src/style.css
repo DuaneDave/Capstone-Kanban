@@ -1,10 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
+::-webkit-scrollbar {
+  width: 3px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 3px;
+  background-color: var(--blend-color);
+  border-radius: 30px;
+}
+
 :root {
   --text-color: #000;
-  --light-text: rgb(233, 225, 225);
+  --light-text: rgb(255, 255, 255);
   --dark-bg: rgb(7, 2, 13);
-  --blend-color: rgb(235, 148, 134);
+  --blend-color: gold;
 }
 
 * {
@@ -29,6 +40,7 @@ a {
 
 main {
   justify-content: center;
+  background-color: rgb(3, 0, 7);
 }
 
 button {
@@ -46,19 +58,33 @@ button {
 
 nav {
   width: 100%;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 3em;
+  left: 0;
+  top: 0;
+  background-color: var(--dark-bg);
+}
+
+a.logo {
+  color: var(--light-text);
+  font-size: 1.2rem;
+}
+
+.ban {
+  color: rgb(235, 148, 134);
 }
 
 .nav-menu {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  background-color: #000;
-  padding: 0.5em;
-  justify-content: center;
-  gap: 3.5rem;
-  z-index: 10;
+  flex-direction: row;
+  align-items: center;
+  width: initial;
+  background: none;
+}
+
+.nav-link i {
+  font-size: 2rem;
 }
 
 .nav-link {
@@ -66,12 +92,8 @@ nav {
   align-items: center;
   font-size: 0.788rem;
   letter-spacing: 2px;
+  margin: 1rem;
   color: var(--light-text);
-}
-
-.nav-link i {
-  font-size: 1.5rem;
-  color: var(--blend-color);
 }
 
 .nav-item {
@@ -82,41 +104,23 @@ nav {
   transform: scale(1.08);
 }
 
-@media screen and (min-width: 768px) {
-  nav {
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 6rem;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: var(--dark-bg);
-  }
-
-  a.logo {
-    color: var(--light-text);
-    position: absolute;
-    top: 1rem;
-    font-size: 1.2rem;
-  }
-
-  .ban {
-    color: rgb(235, 148, 134);
-  }
-
+@media screen and (max-width: 768px) {
   .nav-menu {
-    position: relative;
-    left: 2.5rem;
-    flex-direction: column;
-    align-items: center;
-    width: initial;
-    background: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background-color: #000;
+    padding: 0.5em;
+    justify-content: center;
+    gap: 3.5rem;
+    z-index: 10;
   }
 
   .nav-link i {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: var(--blend-color);
   }
 }
 
@@ -146,7 +150,6 @@ nav {
   width: 100%;
   max-width: 300px;
   padding: 0.5em 0.5em;
-  background: var(--dark-bg);
   margin: 1rem;
   border-radius: 8px;
 }
@@ -183,8 +186,7 @@ nav {
 
 @media screen and (min-width: 768px) {
   .cards {
-    width: calc(100% - 6rem);
-    margin-left: 6rem;
+    width: 100%;
   }
 }
 
@@ -241,7 +243,7 @@ footer {
   top: 0;
   left: 0;
   background-color: rgba(58, 47, 66, 0.253);
-  padding: 1em 0;
+  padding: 1em;
   transition: all 0.5s ease-in-out;
 }
 
@@ -340,8 +342,7 @@ textarea {
 
 @media screen and (min-width: 768px) {
   footer {
-    width: calc(100% - 6rem);
-    margin-left: 6rem;
+    width: 100%;
     flex-direction: row;
   }
 
