@@ -2,9 +2,9 @@
 
 :root {
   --text-color: #000;
-  --light-text: rgb(233, 225, 225);
+  --light-text: rgb(255, 255, 255);
   --dark-bg: rgb(7, 2, 13);
-  --blend-color: rgb(235, 148, 134);
+  --blend-color: gold;
 }
 
 * {
@@ -27,11 +27,18 @@ a {
   color: var(--text-color);
 }
 
+main {
+  justify-content: center;
+  background-color: rgb(3, 0, 7);
+}
+
 button {
   cursor: pointer;
   background-color: var(--blend-color);
   color: rgb(18, 4, 29);
   padding: 0.8em 1.5em;
+  border: none;
+  font-family: inherit;
 }
 
 .flex {
@@ -121,18 +128,19 @@ a.logo {
 
 .cards {
   width: 100%;
+  max-width: 1200px;
   padding: 0 1em;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  flex-wrap: wrap;
   margin-top: 3rem;
 }
 
 .card {
   width: 100%;
   max-width: 300px;
-  padding: 0 0.5em;
-  background: var(--dark-bg);
+  padding: 0.5em 0.5em;
+  margin: 1rem;
+  border-radius: 8px;
 }
 
 .card button {
@@ -215,9 +223,121 @@ footer {
   margin: 0.6rem 0.5rem;
 }
 
+.modal {
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(58, 47, 66, 0.253);
+  padding: 1em;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: var(--dark-bg);
+  max-width: 100%;
+  max-height: 600px;
+  overflow-y: auto;
+  transform: scale(0);
+  transition: transform 1s ease-in-out;
+  border-radius: 8px;
+  flex-direction: column;
+}
+
+.modal-content.active {
+  transform: scale(1);
+}
+
+.modal-img {
+  width: 100%;
+  max-width: 300px;
+  background-color: white;
+  height: 200px;
+  margin-top: 1rem;
+}
+
+.modal-details {
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-details p {
+  font-size: 0.75rem;
+  width: auto;
+  max-width: 430px;
+  line-height: 1.7;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.bx-x {
+  position: absolute;
+  top: 1%;
+  right: 3%;
+  color: var(--blend-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.4rem;
+  margin: 0.7rem 0;
+}
+
+.comment {
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: rgb(194, 186, 186);
+  margin-bottom: 0.7rem;
+}
+
+.comment-msg {
+  width: 60%;
+}
+
+form {
+  width: 60%;
+  margin: 0 auto;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid rgb(230, 228, 228);
+  border-radius: 8px;
+  padding: 0.5em 0.7em;
+  color: white;
+  font-family: inherit;
+  margin-bottom: 0.4rem;
+}
+
+textarea {
+  height: 100px;
+}
+
 @media screen and (min-width: 768px) {
   footer {
     width: 100%;
     flex-direction: row;
+  }
+
+  .modal-img {
+    max-width: 400px;
+    background-color: white;
+    height: 300px;
   }
 }
