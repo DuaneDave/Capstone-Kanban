@@ -3,7 +3,6 @@
 import modal from './modal.js';
 import { requestLikes } from './getData.js';
 
-
 const cards = (games, data) => {
   const cards = document.querySelector('.cards');
   cards.innerHTML = '';
@@ -41,7 +40,7 @@ const cards = (games, data) => {
       });
     });
   });
-  
+
   const likeBtn = document.querySelectorAll('.bx-heart');
   const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/likes';
   likeBtn.forEach((like) => {
