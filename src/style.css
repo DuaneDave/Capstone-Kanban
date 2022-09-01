@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
-:root {
-  --text-color: #000;
-  --light-text: rgb(255, 255, 255);
-  --dark-bg: rgb(7, 2, 13);
-  --blend-color: gold;
-}
-
 ::-webkit-scrollbar {
   width: 3px;
   background-color: transparent;
@@ -16,6 +9,13 @@
   width: 3px;
   background-color: var(--blend-color);
   border-radius: 30px;
+}
+
+:root {
+  --text-color: #000;
+  --light-text: rgb(255, 255, 255);
+  --dark-bg: rgb(7, 2, 13);
+  --blend-color: gold;
 }
 
 * {
