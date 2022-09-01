@@ -6,11 +6,12 @@ const getData = async () => {
   const getJsonObj = await response.json();
   const result = getJsonObj.slice(0, 18);
   const likes = await fetch(
-    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/likes',
+'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5cAzmpr4jeQVeyEjNyKs/likes',
   );
   const res = await likes.json();
   cards(result, res);
 };
+
 const requestLikes = async (url, id) => {
   await fetch(url, {
     method: 'POST',
