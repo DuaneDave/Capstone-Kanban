@@ -2,7 +2,7 @@
 
 ::-webkit-scrollbar {
   width: 3px;
-  background-color: transparent;
+  background-color: rgb(7, 2, 13);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -88,7 +88,6 @@ a.logo {
 }
 
 .nav-link {
-  flex-direction: column;
   align-items: center;
   font-size: 0.788rem;
   letter-spacing: 2px;
@@ -143,7 +142,6 @@ a.logo {
   padding: 0 1em;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 3rem;
 }
 
 .card {
@@ -167,6 +165,7 @@ a.logo {
 .like {
   color: rgb(224, 221, 221);
   align-items: flex-end;
+  flex-direction: column;
 }
 
 .like .bx-heart {
