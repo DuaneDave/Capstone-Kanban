@@ -47,19 +47,33 @@ button {
 
 nav {
   width: 100%;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 3em;
+  left: 0;
+  top: 0;
+  background-color: var(--dark-bg);
+}
+
+a.logo {
+  color: var(--light-text);
+  font-size: 1.2rem;
+}
+
+.ban {
+  color: rgb(235, 148, 134);
 }
 
 .nav-menu {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  background-color: #000;
-  padding: 0.5em;
-  justify-content: center;
-  gap: 3.5rem;
-  z-index: 10;
+  flex-direction: row;
+  align-items: center;
+  width: initial;
+  background: none;
+}
+
+.nav-link i {
+  font-size: 2rem;
 }
 
 .nav-link {
@@ -67,12 +81,8 @@ nav {
   align-items: center;
   font-size: 0.788rem;
   letter-spacing: 2px;
+  margin: 1rem;
   color: var(--light-text);
-}
-
-.nav-link i {
-  font-size: 1.5rem;
-  color: var(--blend-color);
 }
 
 .nav-item {
@@ -83,41 +93,23 @@ nav {
   transform: scale(1.08);
 }
 
-@media screen and (min-width: 768px) {
-  nav {
-    height: 100vh;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 6rem;
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: var(--dark-bg);
-  }
-
-  a.logo {
-    color: var(--light-text);
-    position: absolute;
-    top: 1rem;
-    font-size: 1.2rem;
-  }
-
-  .ban {
-    color: var(--blend-color);
-  }
-
+@media screen and (max-width: 768px) {
   .nav-menu {
-    position: relative;
-    left: 2.5rem;
-    flex-direction: column;
-    align-items: center;
-    width: initial;
-    background: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background-color: #000;
+    padding: 0.5em;
+    justify-content: center;
+    gap: 3.5rem;
+    z-index: 10;
   }
 
   .nav-link i {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: var(--blend-color);
   }
 }
 
@@ -183,8 +175,7 @@ nav {
 
 @media screen and (min-width: 768px) {
   .cards {
-    width: calc(100% - 6rem);
-    margin-left: 6rem;
+    width: 100%;
   }
 }
 
@@ -340,8 +331,7 @@ textarea {
 
 @media screen and (min-width: 768px) {
   footer {
-    width: calc(100% - 6rem);
-    margin-left: 6rem;
+    width: 100%;
     flex-direction: row;
   }
 
