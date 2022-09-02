@@ -60,6 +60,11 @@ nav {
   width: 100%;
 }
 
+nav i {
+  font-size: 1.5rem;
+  color: var(--blend-color);
+}
+
 .logo {
   display: none;
 }
@@ -156,7 +161,7 @@ nav {
 
   .nav-menu {
     position: relative;
-    left: 2.5rem;
+    left: 3rem;
     flex-direction: column;
     align-items: center;
     width: initial;
