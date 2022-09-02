@@ -2,7 +2,7 @@
 
 ::-webkit-scrollbar {
   width: 3px;
-  background-color: transparent;
+  background-color: rgb(7, 2, 13);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -87,12 +87,8 @@ nav {
   align-items: center;
   font-size: 0.788rem;
   letter-spacing: 2px;
+  margin: 1rem;
   color: var(--light-text);
-}
-
-.nav-link i {
-  font-size: 1.5rem;
-  color: var(--blend-color);
 }
 
 .nav-item {
@@ -198,7 +194,6 @@ nav {
   padding: 0 1em;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 3rem;
 }
 
 .card {
@@ -222,8 +217,10 @@ nav {
 .like {
   color: rgb(224, 221, 221);
   align-items: flex-end;
+  flex-direction: column;
 }
 
+.like .bxs-heart,
 .like .bx-heart {
   font-size: 2rem;
   margin-right: 0.2rem;
@@ -408,8 +405,7 @@ textarea {
 
 @media screen and (min-width: 768px) {
   footer {
-    width: calc(100% - 6rem);
-    margin-left: 6rem;
+    width: 100%;
     flex-direction: row;
   }
 

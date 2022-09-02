@@ -1,7 +1,11 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 # Capstone-Kanban
-This  app is built with HTML | CSS | JAVASCRIPT | WEBPACK and JEST it uses multiple API to render popular movies and enable users to have social interactivity such as like and comments
+
+This app is built with HTML | CSS | JAVASCRIPT | WEBPACK and JEST it uses multiple API to render popular movies and enable users to have social interactivity such as like and comments
+
+![screenshot](./src/asset/img1.png)
+![screenshot](./src/asset/im2.png)
 
 ## Built With
 
@@ -20,6 +24,7 @@ This  app is built with HTML | CSS | JAVASCRIPT | WEBPACK and JEST it uses multi
 - `npm install --save-dev stylelint@13.x stylelint-scss@3.x stylelint-config-standard@21.x stylelint-csstree-validator@1.x`
 
 ### Run the following tests:
+
 To run tests on this project if you tweaked something, run the following command
 
 - `npx hint .`
@@ -31,7 +36,8 @@ To run tests on this project if you tweaked something, run the following command
 
 ### LIVE DEMO
 
-Check the live demo here [LINK](Coming Soon)
+Check the live demo here [LINK](https://drive.google.com/file/d/1G-RGNSiVVRTFyf1Krznls79v-Op5yvAn/view?usp=sharing)
+Check the live version [here](https://duanedave.github.io/Capstone-Kanban/)
 
 ## Authors
 
@@ -51,7 +57,7 @@ Check the live demo here [LINK](Coming Soon)
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/DuaneDave/LeaderBoard/issues).
+Feel free to check the [issues page](https://github.com/DuaneDave/Capstone-Kanban/issues).
 
 ## Show your support
 
