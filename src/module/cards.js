@@ -46,6 +46,8 @@ const cards = (games, data) => {
   likeBtn.forEach((like) => {
     like.addEventListener('click', (e) => {
       requestLikes(url, e.target.dataset.id);
+      like.classList.remove('bx-heart');
+      like.classList.add('bxs-heart');
     });
   });
 };
