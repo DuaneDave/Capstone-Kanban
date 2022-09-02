@@ -73,7 +73,7 @@ a.logo {
 }
 
 .ban {
-  color: rgb(235, 148, 134);
+  color: var(--blend-color);
 }
 
 .nav-menu {
@@ -146,7 +146,7 @@ a.logo {
 
 .card {
   width: 100%;
-  max-width: 300px;
+  max-width: 350px;
   padding: 0.5em 0.5em;
   margin: 1rem;
   border-radius: 8px;
@@ -186,6 +186,10 @@ a.logo {
 @media screen and (min-width: 768px) {
   .cards {
     width: 100%;
+  }
+
+  .card {
+    max-width: 300px;
   }
 }
 
@@ -252,13 +256,15 @@ footer {
 
 .modal-content {
   background-color: var(--dark-bg);
-  max-width: 100%;
-  max-height: 600px;
+  max-width: 500px;
+  max-height: 640px;
+  width: 100%;
   overflow-y: auto;
   transform: scale(0);
   transition: transform 1s ease-in-out;
   border-radius: 8px;
   flex-direction: column;
+  padding: 1.5em 0.5em;
 }
 
 .modal-content.active {
@@ -289,7 +295,7 @@ footer {
 
 .bx-x {
   position: absolute;
-  top: 1%;
+  top: 2%;
   right: 3%;
   color: var(--blend-color);
   font-size: 1.5rem;
