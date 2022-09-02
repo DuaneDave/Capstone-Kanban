@@ -29,8 +29,8 @@ const modal = async (data, index) => {
     <div class="comment-form">
       <form class="">
       <h2 class="heading">Add a comment</h2>
-        <input type="text" placeholder="Enter your name" />
-        <textarea placeholder="Enter your comment here"></textarea>
+        <input type="text" placeholder="Enter your name" required />
+        <textarea placeholder="Enter your comment here" required></textarea>
         <button type="submit" class="btn flex">Submit</button>
       </form>
       <i class='bx bx-x'></i>
