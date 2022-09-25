@@ -1,5 +1,3 @@
-/* eslint-disable import/no-cycle */
-
 import modal from './modal.js';
 import { requestLikes } from './getData.js';
 
