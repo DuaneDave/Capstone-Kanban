@@ -1,5 +1,3 @@
-/* eslint-disable no-return-assign */
-
 import { postComment, getComments } from './requestComment.js';
 
 const modal = async (data, index) => {
@@ -7,6 +5,7 @@ const modal = async (data, index) => {
   if (commentData.length === undefined) {
     commentData = [];
   }
+
   const modalContainer = document.querySelector('.modal-content');
   modalContainer.innerHTML = `
     <div class="modal-details flex">
@@ -19,11 +18,16 @@ const modal = async (data, index) => {
     <div class="comments">
       <div class="comment-details">
         <h2 class="heading">Comments <span>(${commentData.length})</span></h2>`;
-  commentData.map((comment) => modalContainer.innerHTML += `<div class="comment flex">
-          <p class="comment-date">${comment.creation_date} ${comment.username} :</p>
-          <p class="comment-msg">${comment.comment}</p>
-          </div>
-          `);
+
+  commentData.map((comment) => {
+    modalContainer.innerHTML += `<div class="comment flex">
+      <p class="comment-date">${comment.creation_date} ${comment.username} :</p>
+      <p class="comment-msg">${comment.comment}</p>
+      </div>`;
+
+    return comment;
+  });
+
   modalContainer.innerHTML += `</div>
     </div>
     <div class="comment-form">
@@ -46,6 +50,7 @@ const modal = async (data, index) => {
       username: name,
       comment: commentMsg,
     };
+
     form.reset();
     postComment(commentData);
     getComments(index);
@@ -54,4 +59,5 @@ const modal = async (data, index) => {
     }, 2000);
   });
 };
+
 export default modal;

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-cycle */
 import cards from './cards.js';
 import counter from './counter.js';
 
